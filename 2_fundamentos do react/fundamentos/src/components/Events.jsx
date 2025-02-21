@@ -36,10 +36,6 @@ const Events = () => {
         <div>{renderSomething(true)}</div>
         <div>{renderSomething(false)}</div>
         <br />
-        {/* Imagem em public */}
-        <div>
-            <img src="/img1.jpg" alt="Imagem de wallpaper da logo do dell g15" />    
-        </div>
     </div>
   );
 };

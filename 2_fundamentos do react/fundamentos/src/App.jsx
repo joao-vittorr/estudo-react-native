@@ -18,6 +18,15 @@ function App() {
       <h1>Template Expressions</h1>
       <TemplateExpressions />
       <Events />
+      {/* Imagem em public */}
+      <div>
+        <img src="/img1.jpg" alt="Imagem de wallpaper da logo do dell g15" />
+      </div>
+      <br />
+      {/* Imagem em src/assets */}
+      <div>
+        <img src="" alt="" />
+      </div>
     </>
   );
 }
