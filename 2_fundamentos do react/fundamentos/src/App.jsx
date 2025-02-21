@@ -5,7 +5,7 @@ import "./App.css";
 // import components
 import FirstComponent from "./components/FirstComponent";
 import TemplateExpressions from "./components/TemplateExpressions";
-
+import Events from "./components/Events";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +17,7 @@ function App() {
       <hr />
       <h1>Template Expressions</h1>
       <TemplateExpressions />
+      <Events />
     </>
   );
 }
