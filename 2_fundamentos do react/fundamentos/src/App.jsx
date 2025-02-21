@@ -6,6 +6,8 @@ import "./App.css";
 import FirstComponent from "./components/FirstComponent";
 import TemplateExpressions from "./components/TemplateExpressions";
 import Events from "./components/Events";
+//importando imagem
+import CarFuture from "./assets/car-future.jpg";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,12 +22,12 @@ function App() {
       <Events />
       {/* Imagem em public */}
       <div>
-        <img src="/img1.jpg" alt="Imagem de wallpaper da logo do dell g15" />
+        <img src="/img1.jpg" alt="Imagem de wallpaper da logo do dell g15" style={{ width: "100%" }} />
       </div>
       <br />
       {/* Imagem em src/assets */}
       <div>
-        <img src="" alt="" />
+        <img src={CarFuture} alt="Imagem futurista de um carro altamente tecnologico" style={{ width: "100%" }} />
       </div>
     </>
   );
