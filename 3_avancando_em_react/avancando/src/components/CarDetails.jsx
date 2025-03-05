@@ -1,19 +1,19 @@
 import React from "react";
 
-const CarDetails = (props) => {
+const CarDetails = ({marca, modelo, ano}) => {
   return (
     <div>
       <h2>
         Detalhes do carro: <br />
         <ul>
             <li>
-                <strong>Marca:</strong> {props.marca}
+                <strong>Marca:</strong> {marca}
             </li>
             <li>
-                <strong>Modelo:</strong> {props.modelo}
+                <strong>Modelo:</strong> {modelo}
             </li>
             <li>
-                <strong>Ano:</strong> {props.ano}
+                <strong>Ano:</strong> {ano}
             </li>
         </ul>
       </h2>
