@@ -17,7 +17,10 @@ function App() {
         {/* props */}
         <ShowUserName name="João Vitor Alexandre Ribeiro "> </ShowUserName>
         {/* destructuring */}
-        <CarDetails marca="VW" modelo="Gol" ano={2008}> </CarDetails>
+        <CarDetails marca="VW" modelo="Gol" ano={2008} newCar={false}> </CarDetails>
+        {/* Reaproveitando*/}
+        <CarDetails marca="Fiat" modelo="Palio" ano={2010} newCar={false}> </CarDetails>
+        <CarDetails marca="Chevrolet" modelo="Onix" ano={2025} newCar={true}> </CarDetails>
       </div>
     </>
   );
