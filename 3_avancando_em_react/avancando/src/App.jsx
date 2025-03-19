@@ -1,10 +1,10 @@
-import { useState } from "react";
 import "./App.css";
 import ManageData from "./components/ManageData";
 import ListRender from "./components/ListRender";
 import CondicionalRender from "./components/CondicionalRender";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
+import Fragment from "./components/Fragment";
 
 function App() {
   const carros = [
@@ -34,6 +34,9 @@ function App() {
           <CarDetails marca={carro.marca} modelo={carro.modelo} ano={carro.ano} newCar={carro.newCar}> </CarDetails>
         ))}
       </div>
+      <br /><hr />
+      {/* Fragment */}
+      <Fragment />
     </>
   );
 }
