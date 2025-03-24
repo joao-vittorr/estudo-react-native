@@ -39,7 +39,7 @@ function App() {
       {/* Fragment */}
       <Fragment />
       {/* Children */}
-      <Container>
+      <Container myValue="Teste">
         <h2>E este é o conteúdo</h2>
       </Container>
     </>
