@@ -6,6 +6,7 @@ import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
 import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
 
 function App() {
   const carros = [
@@ -13,6 +14,10 @@ function App() {
     { marca: "Fiat", modelo: "Palio", ano: 2010, newCar: false },
     { marca: "Chevrolet", modelo: "Onix", ano: 2025, newCar: true },
   ];
+
+  function showMessage() {
+    alert("Evento do componente pai!");
+  }
 
   return (
     <>
@@ -42,6 +47,8 @@ function App() {
       <Container myValue="Teste">
         <h2>E este é o conteúdo</h2>
       </Container>
+      {/* Executando fução na props */}
+      <ExecuteFunction myFunction={showMessage} />
     </>
   );
 }
