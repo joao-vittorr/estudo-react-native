@@ -5,6 +5,7 @@ import CondicionalRender from "./components/CondicionalRender";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragment from "./components/Fragment";
+import Container from "./components/Container";
 
 function App() {
   const carros = [
@@ -37,6 +38,10 @@ function App() {
       <br /><hr />
       {/* Fragment */}
       <Fragment />
+      {/* Children */}
+      <Container>
+        <h2>E este é o conteúdo</h2>
+      </Container>
     </>
   );
 }
