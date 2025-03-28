@@ -14,6 +14,7 @@ function App() {
         <h1>React CSS</h1>
         {/*Css de componente */}
         <Mycomponent />
+        <p>Esse paragrado é do App.js</p>
       </div>
     </>
   );

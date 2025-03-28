@@ -1,0 +1,10 @@
+p{
+    color: green;
+    background-color: black;
+    padding: 10px;
+}
+.my-comp-paragraph{
+    color: red;
+    background-color: yellow;
+    padding: 10px;
+}
