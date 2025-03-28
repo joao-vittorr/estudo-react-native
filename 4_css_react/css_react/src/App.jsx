@@ -15,6 +15,8 @@ function App() {
         {/*Css de componente */}
         <Mycomponent />
         <p>Esse paragrado é do App.js</p>
+        {/*Css inline */}
+        <p style={{color:"black", backgroundColor:"white", padding: "25px", borderTop: "5px solid red"}}>Esse Elemento foi estilizado usando css inline</p>
       </div>
     </>
   );
