@@ -20,6 +20,9 @@ const Myform = ({user}) => {
         console.log('Enviando o form...')
         console.log(name, email)
 
+        // '  6 - Limpar os campos do form
+        setName('')
+        setEmail('')
         
     }
 
