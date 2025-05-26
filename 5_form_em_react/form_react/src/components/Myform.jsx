@@ -10,6 +10,8 @@ const Myform = ({user}) => {
 
     const [bio, setBio] = useState(user ? user.bio : '')
 
+    const [role, setRole] = useState(user ? user.role : 'user')
+
     const handleName = (e) => {
         setName(e.target.value)
     }
@@ -20,13 +22,12 @@ const Myform = ({user}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('Enviando o form...')
-        console.log(name, email, bio)
+        console.log(name, email, bio, role)
 
         // '  6 - Limpar os campos do form
         setName('')
         setEmail('')
         setBio('')
-
     }
 
   return (
@@ -53,7 +54,14 @@ const Myform = ({user}) => {
         </label>
 
         {/* 8 - select */}
-
+        <label>
+            <span>Função no sistema:</span>
+            <select name="role" id="role" onChange={(e) => setRole(e.target.value)} value={role}>
+                <option value="user">Usuário</option>
+                <option value="editor">Editor</option>
+                <option value="admin">Administrador</option>
+            </select>
+        </label>
 
         <input type="submit" value="Enviar" />
         </form>
