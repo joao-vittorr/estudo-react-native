@@ -5,8 +5,10 @@ import { useState } from 'react'
 
 const Myform = ({user}) => {
     // 3 - gerenciamento de dados
-    const [name, setName] = useState(user ? user.name : 'Usuário não encontrado') 
-    const [email, setEmail] = useState(user ? user.email : 'Usuário não encontrado')
+    const [name, setName] = useState(user ? user.name : '') 
+    const [email, setEmail] = useState(user ? user.email : '')
+
+    const [bio, setBio] = useState(user ? user.bio : '')
 
     const handleName = (e) => {
         setName(e.target.value)
@@ -18,12 +20,13 @@ const Myform = ({user}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('Enviando o form...')
-        console.log(name, email)
+        console.log(name, email, bio)
 
         // '  6 - Limpar os campos do form
         setName('')
         setEmail('')
-        
+        setBio('')
+
     }
 
   return (
@@ -42,7 +45,16 @@ const Myform = ({user}) => {
 
                 <input type="email" value={email} name="email" placeholder="Digite seu e-mail" onChange={(e) => setEmail(e.target.value)} required/>
             </label>
-        
+
+        {/* 7 - textarea */}
+        <label>        
+            <span>Bio:</span>
+            <textarea name="bio" id="bio" placeholder='Descrição do usuário' onChange={(e)=> setBio(e.target.value)} value={bio}></textarea>
+        </label>
+
+        {/* 8 - select */}
+
+
         <input type="submit" value="Enviar" />
         </form>
     </div>
