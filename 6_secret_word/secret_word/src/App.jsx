@@ -21,11 +21,15 @@ function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
   const [words] = useState(wordsList);
 
+  const startGame = () => {
+    setGameStage(stages[1].name);
+  };
+
   return (
     <>
-      {gameStage === "start" && <StartScreen/>}
-      {gameStage === "game" && <GameScreen secretWord={secretWord} setGameStage={setGameStage} />}
-      {gameStage === "end" && <EndScreen secretWord={secretWord} setGameStage={setGameStage} />}  
+      {gameStage === "start" && <StartScreen startGame={startGame}/>}
+      {gameStage === "game" && <GameScreen  />}
+      {gameStage === "end" && <EndScreen  />}  
 
     </>
   );
