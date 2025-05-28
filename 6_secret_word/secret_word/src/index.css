@@ -15,3 +15,20 @@ body {
   background: linear-gradient(180deg, #417383 0%, #0059ff 100%);
   color: white;
 }
+
+button {
+  cursor: pointer;
+  background-color: wheat;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 2px solid #000;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #f0c040;
+  transform: scale(1.05);
+}
