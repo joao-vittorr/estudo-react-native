@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 
-import { useCallback, useEffec, useState } from "react";
+import { useCallback, useEffec} from "react";
 
 // import data
-import {wordsList}from "./data/words";
+import {wordsList} from "./data/word";
 
 // import components
 import StartScreen from "./components/StartScreen";
@@ -19,7 +19,7 @@ const stages = [
 
 function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
-  const [secretWord, setSecretWord] = useState("");
+  const [words] = useState(wordsList);
 
   return (
     <>
