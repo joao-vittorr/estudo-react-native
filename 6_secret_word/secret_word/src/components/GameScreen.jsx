@@ -1,10 +1,13 @@
-import React from 'react'
+import React from "react";
 import "./GameScreen.css";
 
-const GameScreen = () => {
+const GameScreen = ({ verifyLetter }) => {
   return (
-    <div>GameScreen</div>
-  )
-}
+    <div>
+      <h1>Game</h1>
+      <button onClick={verifyLetter}>Finalizar jogo</button>
+    </div>
+  );
+};
 
 export default GameScreen;
