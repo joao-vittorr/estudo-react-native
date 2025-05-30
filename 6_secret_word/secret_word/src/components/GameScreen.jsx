@@ -1,19 +1,36 @@
 import React from "react";
 import "./GameScreen.css";
 
-const GameScreen = ({ verifyLetter }) => {
+const GameScreen = ({
+  verifyLetter,
+  picketWord,
+  pickedCategory,
+  letters,
+  guessedLetters,
+  wrongLetters,
+  guesses,
+  score
+}) => {
   return (
     <div className="game-screen">
       <p className="points">
-        <span>Pontuação: </span>
+        <span>Pontuação: {score}</span>
       </p>
-      <h1>Advinhe a palavra:</h1>
+      <h1>Advinhe a palavra: </h1>
       <h3 className="tip">
-        Dica sobre a palavra: <span> </span>
+        Dica sobre a palavra: <span>{pickedCategory} </span>
       </h3>
+      <p>Você ainda tem {guesses} tentativa(s).</p>
       <div className="wordContainer">
-        <span className="letter">A</span>
-        <span className="blankSquare"></span>
+        {letters.map((letter, i) => {
+          return guessedLetters.includes(letter) ? (
+            <span key={i} className="letter">
+              {letter}
+            </span>
+          ) : (
+            <span key={i} className="blankSquare"></span>
+          );
+        })}
       </div>
       <div className="letterContainer">
         <p>Tente advinhar a palabvra:</p>
@@ -29,7 +46,15 @@ const GameScreen = ({ verifyLetter }) => {
       </div>
       <div className="wrongLettersContainer">
         <p>Letras já utilizadas:</p>
-        <span className="wrongLetter">B</span>
+        {wrongLetters.length > 0 ? (
+          wrongLetters.map((letter, i) => (
+            <span key={i} className="wrongLetter">
+              {letter},{" "}
+            </span>
+          ))
+        ) : (
+          <p>Nenhuma letra utilizada ainda.</p>
+        )}
       </div>
     </div>
   );

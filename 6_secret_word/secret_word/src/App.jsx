@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 
-import { useCallback, useEffec} from "react";
+import { useCallback, useEffec } from "react";
 
 // import data
-import {wordsList} from "./data/word";
+import { wordsList } from "./data/word";
 
 // import components
 import StartScreen from "./components/StartScreen";
@@ -15,7 +15,7 @@ const stages = [
   { id: 1, name: "start" },
   { id: 2, name: "game" },
   { id: 3, name: "end" },
-]
+];
 
 function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
@@ -25,13 +25,19 @@ function App() {
   const [pickedCategory, setPickedCategory] = useState("");
   const [letters, setLetters] = useState([]);
 
+  const [guessedLetters, setGuessedLetters] = useState([]);
+  const [wrongLetters, setWrongLetters] = useState([]);
+  const [guesses, setGuesses] = useState(3);
+  const [score, setScore] = useState(0);
+
   const pickWordAndCategory = useCallback(() => {
     // Pick a random category
     const categories = Object.keys(words);
     const category = categories[Math.floor(Math.random() * categories.length)];
 
     // Pick a random word from the category
-    const word = words[category][Math.floor(Math.random() * words[category].length)];
+    const word =
+      words[category][Math.floor(Math.random() * words[category].length)];
 
     return { word, category };
   }, [words]);
@@ -39,7 +45,7 @@ function App() {
   // Start the game
   const startGame = () => {
     setGameStage(stages[1].name);
-    const {word, category} = pickWordAndCategory();
+    const { word, category } = pickWordAndCategory();
 
     // Create an array of letters
     const wordLetters = word.split("").map((l) => l.toLowerCase());
@@ -62,10 +68,20 @@ function App() {
 
   return (
     <>
-      {gameStage === "start" && <StartScreen startGame={startGame}/>}
-      {gameStage === "game" && <GameScreen verifyLetter={verifyLetter} />}
-      {gameStage === "end" && <EndScreen retry={retry} />}  
-
+      {gameStage === "start" && <StartScreen startGame={startGame} />}
+      {gameStage === "game" && (
+        <GameScreen
+          verifyLetter={verifyLetter}
+          pickedWord={pickedWord}
+          pickedCategory={pickedCategory}
+          letters={letters}
+          guessedLetters={guessedLetters}
+          wrongLetters={wrongLetters}
+          guesses={guesses}
+          score={score}
+        />
+      )}
+      {gameStage === "end" && <EndScreen retry={retry} />}
     </>
   );
 }
