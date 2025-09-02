@@ -1,9 +1,8 @@
-.start-screen h1{
-    font-size: 2.5rem;
+.start h1 {
+  font-size: 3.5em;
 }
 
-.start-screen p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+.start p {
+  margin-bottom: 2em;
+  color: #ecfa00;
 }
-
