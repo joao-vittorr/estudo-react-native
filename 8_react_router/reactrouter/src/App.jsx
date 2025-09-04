@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 // 2 - import das páginas
 import Home from './pages/Home'
 import About from './pages/About'
+import Product from './pages/Product'
 
 // 3 import dos componentes
 import Navbar from './components/Navbar'
@@ -19,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* route com parâmetro */}
+          <Route path="/product/:id" element={<Product />} />
         </Routes>
       </BrowserRouter>
     </>
