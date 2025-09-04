@@ -14,8 +14,8 @@ function App() {
   return (
     <>
       <h1>React Router</h1>
-      <Navbar />
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
