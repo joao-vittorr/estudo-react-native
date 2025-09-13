@@ -10,11 +10,19 @@
   display: block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 16px;
   text-decoration: none;
 }
 
 .navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Estilização para o link ativo */
+.navbar .active {
+  font-weight: bold;
+  border-bottom: 4px solid #04AA6D;
   background-color: #ddd;
   color: black;
 }
