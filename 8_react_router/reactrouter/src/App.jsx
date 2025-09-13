@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Product from './pages/Product'
 import Info from './pages/Info'
+import NotFound from './pages/NotFound'
 
 // 3 import dos componentes
 import Navbar from './components/Navbar'
@@ -25,6 +26,8 @@ function App() {
           <Route path="/product/:id/info" element={<Info />} />
           {/* route com parâmetro */}
           <Route path="/product/:id" element={<Product />} />
+          {/*Page not found */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
