@@ -9,9 +9,11 @@ import About from './pages/About'
 import Product from './pages/Product'
 import Info from './pages/Info'
 import NotFound from './pages/NotFound'
+import Search from './pages/Search'
 
 // 3 import dos componentes
 import Navbar from './components/Navbar'
+import SearchForm from './components/SearchForm'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <h1>React Router</h1>
       <BrowserRouter>
       <Navbar />
+      <SearchForm />
+        {/* Configurar as rotas */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -26,6 +30,8 @@ function App() {
           <Route path="/product/:id/info" element={<Info />} />
           {/* route com parâmetro */}
           <Route path="/product/:id" element={<Product />} />
+          {/* Search */}
+          <Route path="/search" element={<Search />} />
           {/*Page not found */}
           <Route path="*" element={<NotFound />} />
         </Routes>
